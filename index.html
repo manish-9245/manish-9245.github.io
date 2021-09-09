@@ -1,31 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <title>Main page</title>
+    <meta http-equiv="refresh" content="4; url = portfolio.html" />
+    <title>Manish Tiwari</title>
 </head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        background-color: #000;
+    }
+
+    .center {
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .center h1 {
+        color: rgba(255, 0, 0, 0.1);
+        font-size: 100px;
+        text-transform: uppercase;
+        font-weight: 700;
+        background-size: cover;
+        background-image: url(https://i.ytimg.com/vi/3yjfwO1OZSs/maxresdefault.jpg);
+        -webkit-background-clip: text;
+        animation: background-text-animation 20s linear infinite;
+    }
+
+    @keyframes background-text-animation {
+        0% {
+            background-position: left 0px top 50%;
+        }
+
+        50% {
+            background-position: left 1500px top 50%;
+        }
+
+        100% {
+            background-position: left 0px top 50%;
+        }
+    }
+
+    @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    body {
+        font-family: 'Exo', sans-serif;
+    }
+
+
+    .context {
+        width: 100%;
+        position: absolute;
+        top: 50vh;
+
+    }
+
+    .context h1 {
+        justify-content: center;
+        color: #fff;
+        font-size: 20px;
+        position: relative;
+        background-position-x: 5em;
+    }
+
+
+    .area {
+        background-image: url('intro-bg.jpg');
+        background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+        width: 100%;
+        height: 100vh;
+        height: 100%;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+
+    .circles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .circles li {
+        position: absolute;
+        display: block;
+        list-style: none;
+        width: 20px;
+        height: 20px;
+        background: rgba(255, 255, 255, 0.2);
+        animation: animate 25s linear infinite;
+        bottom: -150px;
+
+    }
+
+    .circles li:nth-child(1) {
+        left: 25%;
+        width: 80px;
+        height: 80px;
+        animation-delay: 0s;
+    }
+
+
+    .circles li:nth-child(2) {
+        left: 10%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 2s;
+        animation-duration: 12s;
+    }
+
+    .circles li:nth-child(3) {
+        left: 70%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 4s;
+    }
+
+    .circles li:nth-child(4) {
+        left: 40%;
+        width: 60px;
+        height: 60px;
+        animation-delay: 0s;
+        animation-duration: 18s;
+    }
+
+    .circles li:nth-child(5) {
+        left: 65%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 0s;
+    }
+
+    .circles li:nth-child(6) {
+        left: 75%;
+        width: 110px;
+        height: 110px;
+        animation-delay: 3s;
+    }
+
+    .circles li:nth-child(7) {
+        left: 35%;
+        width: 150px;
+        height: 150px;
+        animation-delay: 7s;
+    }
+
+    .circles li:nth-child(8) {
+        left: 50%;
+        width: 25px;
+        height: 25px;
+        animation-delay: 15s;
+        animation-duration: 45s;
+    }
+
+    .circles li:nth-child(9) {
+        left: 20%;
+        width: 15px;
+        height: 15px;
+        animation-delay: 2s;
+        animation-duration: 35s;
+    }
+
+    .circles li:nth-child(10) {
+        left: 85%;
+        width: 150px;
+        height: 150px;
+        animation-delay: 0s;
+        animation-duration: 11s;
+    }
+
+
+
+    @keyframes animate {
+
+        0% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 1;
+            border-radius: 0;
+        }
+
+        100% {
+            transform: translateY(-1000px) rotate(720deg);
+            opacity: 0;
+            border-radius: 50%;
+        }
+
+
+    }
+</style>
+
 <body>
-    <section>
-        <div class="bg-black text-white py-20">
-            <div class="container mx-auto flex flex-col md:flex-row items-center my-12 md:my-24">
-                <div class="flex flex-col w-full lg:w-1/3 justify-center items-start p-8">
-                    <h1 class="text-3xl md:text-5xl p-2 text-yellow-300 tracking-loose">My Hackathon Template</h1>
-                    <h2 class="text-3xl md:text-5xl leading-relaxed md:leading-snug mb-2">Front end Template
-                    </h2>
-                    <p class="text-sm md:text-base text-gray-50 mb-4">Isse hi use krunga hackathon mein</p>
-                    <a href="index2.html"
-                        class="bg-transparent hover:bg-yellow-300 text-yellow-300 hover:text-black rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-300 hover:border-transparent">
-                        Explore Now</a>
-                </div>
-                <div class="p-8 mt-12 mb-6 md:mb-0 md:mt-0 ml-0 md:ml-12 lg:w-2/3  justify-center">
-                    <div class="h-48 flex flex-wrap content-center">
-                        <div>
-                            <img class="inline-block mt-28 hidden xl:block" src="https://twenty-tech.com/wp-content/uploads/2018/12/Front-end-developemtn-1.png"></div>
-                        </div>
-                    </div>
-    </section>
+    <div class="center">
+        <h1>Manish Tiwari</h1>
+    </div>
+    <div class="context">
+    </div>
+
+
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
 </body>
+
 </html>
