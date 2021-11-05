@@ -16,7 +16,7 @@ html {
     /* font-size: 1rem; */
     line-height: 1.25;
     /* background-color: #18222d; */
-    background-image: url("bg.png");
+    background-color: black;
   }
   #container {
 	margin: 50px 0 0 0;
@@ -30,7 +30,8 @@ html {
 }
   .grid {
     width: 100%;
-    max-width: 60rem;
+    max-width: 100%;
+    padding: 15%;
     margin-left: auto;
     margin-right: auto;
   
@@ -43,7 +44,7 @@ html {
   
   .grid-block {
     width: 50%;
-    min-height: 11.25rem;
+    height:50%;
     padding: 1rem;
   }
   
