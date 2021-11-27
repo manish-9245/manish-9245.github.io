@@ -13,14 +13,16 @@ html {
     min-height: 100vh;
     font-family:Times New Roman;
 	font-size: 50px;
+  padding: 0%;
     /* font-size: 1rem; */
     line-height: 1.25;
     /* background-color: #18222d; */
     background-color: black;
   }
   #container {
-	margin: 50px 0 0 0;
+	margin: 0px 0 0 0;
 	text-align: center;
+  padding: 0%;
 }
 
 #text {
@@ -31,7 +33,7 @@ html {
   .grid {
     width: 100%;
     max-width: 100%;
-    padding: 15%;
+    padding: 5%;
     margin-left: auto;
     margin-right: auto;
   
