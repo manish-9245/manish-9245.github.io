@@ -15,7 +15,7 @@ body,
 .content {
   background-color: #93420a;
   color: white;
-  transition: all 1000ms ease;
+  transition: all 500ms ease;
 }
 
 .background-images {
@@ -51,16 +51,16 @@ ch-mini-slider {
 }
 
 .to-next {
-  animation: fromTop 500ms ease forwards;
+  animation: fromTop 100ms ease forwards;
 }
 
 .to-prev {
-  animation: fromBottom 500ms ease forwards;
+  animation: fromBottom 100ms ease forwards;
 }
 
 @keyframes fromBottom {
   from {
-    transform: translateY(-50px);
+    transform: translateY(-5%);
   }
   to {
     transform: translateY(0px);
@@ -68,7 +68,7 @@ ch-mini-slider {
 }
 @keyframes fromTop {
   from {
-    transform: translateY(50px);
+    transform: translateY(5%);
   }
   to {
     transform: translateY(0px);
