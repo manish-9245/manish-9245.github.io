@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,600&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+}
+
+html,
+body,
+.content {
+  height: 100%;
+  overflow: hidden;
+}
+
+.content {
+  background-color: #93420a;
+  color: white;
+  transition: all 1000ms ease;
+}
+
+.background-images {
+  position: relative;
+  z-index: 1;
+  text-shadow: 2px 2px 2px rgb(0 0 0 / 60%);
+  height: 100%;
+  width: 30%;
+}
+
+.message-slide {
+  font-size: 2rem;
+  position: absolute;
+  padding-left: 15%;
+  padding-right: 5%;
+  opacity: 0;
+  transition: all 500ms ease;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.message-slide.active {
+  opacity: 1;
+}
+
+ch-mini-slider {
+  position: fixed;
+  right: 10%;
+  top: 30vh;
+  
+}
+
+.to-next {
+  animation: fromTop 500ms ease forwards;
+}
+
+.to-prev {
+  animation: fromBottom 500ms ease forwards;
+}
+
+@keyframes fromBottom {
+  from {
+    transform: translateY(-50px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+@keyframes fromTop {
+  from {
+    transform: translateY(50px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+.slide {
+  background-size: cover;
+}
+
+.slide-1 {
+  background-image: url(cert1.jpg);
+}
+
+.slide-2 {
+  background-image: url(cert2.jpg);
+}
+.slide-3 {
+  background-image: url(cert3.jpg);
+}
+.slide-4 {
+  background-image: url(cert4.jpg);
+}
+.slide-5 {
+  background-image: url(cert6.jpg);
+}
+.slide-6 {
+  background-image: url(cert7.jpg);
+}
+.slide-7 {
+  background-image: url(cert10.jpg);
+}
+.slide-8 {
+  background-image: url(cert9.jpg);
+}

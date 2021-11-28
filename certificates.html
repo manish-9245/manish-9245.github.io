@@ -1,104 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Certificates</title>
-  <link rel="stylesheet" type="text/css" href="certificates.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" crossorigin="anonymous">
 </head>
-
 <body>
-  <div id="container">
-    <div id="text"></div>
-  </div>
-
- 
-  <div class="grid image-grid">
-
-    <div class="grid-block">
-      <div class="tile">
-        <a class="tile-link" href="https://www.hackerrank.com/certificates/7fc43fbb7d74">
-          <img class="tile-img tile-img1" src="cert1.jpg" alt="Image">
-        </a>
+    
+    <div class="content">
+        <div class="background-images">
+          <div class="message-slide message-slide-1 active" >
+            Problem Solving (Basic)-Hackerrank
+          </div>
+          <div class="message-slide message-slide-2">
+            Problem Solving (Intermediate)-Hackerrank
+          </div>
+          <div class="message-slide message-slide-3">
+            Python (Basic)-Hackerrank
+          </div>
+          <div class="message-slide message-slide-4">
+            Introduction to Data Science- IBM Big Data University
+          </div>
+          <div class="message-slide message-slide-5">
+            Introduction to Networks- Cisco Networking Academy
+          </div>
+          <div class="message-slide message-slide-6">
+            Introduction to Data Science in Python- University of Michigan
+          </div>
+          <div class="message-slide message-slide-7">
+            R Programming- John Hopkins University
+          </div>
+          <div class="message-slide message-slide-8">
+            R 101- IBM Big Data University
+          </div>
+        </div>
+        <ch-mini-slider onslidechange="onSlideChange">
+          <div class="slide slide-1"></div>
+          <div class="slide slide-2"></div>
+          <div class="slide slide-3"></div>
+          <div class="slide slide-4"></div>
+          <div class="slide slide-5"></div>
+          <div class="slide slide-6"></div>
+          <div class="slide slide-7"></div>
+          <div class="slide slide-8"></div>
+        </ch-mini-slider>
       </div>
-    </div>
+      <script>
+          class ChMiniSlider extends HTMLElement {
+  constructor() {
+    super();
+    this.queue = [];
+    this.shadow = this.attachShadow({ mode: "open" });
 
-    <div class="grid-block">
-      <div class="tile">
-        <a class="tile-link" href="https://www.hackerrank.com/certificates/32b876b239f7">
-          <img class="tile-img tile-img2" src="cert2.jpg" alt="Image">
-        </a>
-      </div>
-    </div>
+    this.scrollings = [];
+    this.currentSlide = 1;
+    this.ANIMATION_THRESHOLD = 500;
+  }
 
-    <div class="grid-block">
-      <div class="tile">
-        <a class="tile-link" href="https://www.hackerrank.com/certificates/4ec3a402929e">
-          <img class="tile-img tile-img3" src="cert3.jpg" alt="Image">
-        </a>
-      </div>
-    </div>
+  connectedCallback() {
+    this.render();
+    this.setupEvents();
+  }
 
-    <div class="grid-block">
-      <div class="tile">
-        <a class="tile-link" href="https://courses.cognitiveclass.ai/certificates/468430466b9c43568a4c4119140b3814">
-          <img class="tile-img tile-img4" src="cert4.jpg" alt="Image">
-        </a>
-      </div>
-    </div>
+  static get observedAttributes() {
+    return [];
+  }
 
-    <div class="grid-block">
-      <div class="tile">
-        <a class="tile-link"
-          href="https://insidesherpa.s3.amazonaws.com/completion-certificates/JP%20Morgan/R5iK7HMxJGBgaSbvk_J.P.%20Morgan%20Chase_fn3d4MneLRAkZZNt5_completion_certificate.pdf">
-          <img class="tile-img tile-img5" src="cert5.jpg" alt="Image">
-        </a>
-      </div>
-    </div>
+  attributeChangedCallback(prop, oldValue, newValue) {
+    const updateMap = {};
+    if (updateMap[prop]) {
+      if (this.root) {
+        updateMap[prop].bind(this)(newValue, oldValue);
+      } else {
+        this.queue.push({
+          fn: updateMap[prop].bind(this),
+          params: [newValue, oldValue]
+        });
+      }
+    }
+  }
 
-    <div class="grid-block">
-      <div class="tile">
-        <a class="tile-link" href="https://www.youracclaim.com/badges/1108fdb1-ce69-4ef7-bcf6-c7dd13b254b4/public_url">
-          <img class="tile-img tile-img6" src="cert6.JPG" alt="Image">
-        </a>
-      </div>
-    </div>
+  processQueue() {
+    while (this.queue.length) {
+      const delayed = this.queue.pop();
+      delayed.fn(...delayed.params);
+    }
+  }
 
-    <div class="grid-block">
-      <div class="tile">
-        <a class="tile-link" href="https://www.coursera.org/account/accomplishments/certificate/MQUV8B5T4DRJ">
-          <img class="tile-img tile-img7" src="cert7.jpg" alt="Image">
-        </a>
-      </div>
-    </div>
+  setupEvents() {
+    window.addEventListener("wheel", (e) => {
+      if (Math.abs(e.deltaX) >= Math.abs(e.deltaY)) {
+        return;
+      }
+      const deltaY = e.deltaY;
+      this.updateHistory(new Date().getTime(), deltaY);
+      if (new Date().getTime() - this.lastMove <= this.ANIMATION_THRESHOLD) {
+        return;
+      }
+      if (this.isAccelerating()) {
+        if (deltaY > 0) {
+          this.nextSlide();
+        } else {
+          this.prevSlide();
+        }
+      } else {
+        // if (this.onRelease) {
+        //   this.onRelease();
+        // }
+      }
+    });
+  }
 
-    <div class="grid-block">
-      <div class="tile">
-        <a class="tile-link" href="https://certificates.mooc.fi/validate/a173jxyy784">
-          <img class="tile-img tile-img8" src="cert8.JPG" alt="Image">
-        </a>
-      </div>
-    </div>
+  emitSlideChange(direction) {
+    const ev = new CustomEvent("onslidechange", {
+      detail: {
+        slide: this.currentSlide,
+        direction
+      }
+    });
+    this.dispatchEvent(ev);
+  }
 
-    <div class="grid-block">
-      <div class="tile">
-        <a class="tile-link" href="https://courses.cognitiveclass.ai/certificates/e4ee3feb4b524d71bf2d08df9c80c983">
-          <img class="tile-img tile-img9" src="cert9.JPG" alt="Image">
-        </a>
-      </div>
-    </div>
+  updateScroll() {
+    this.moveY(this.wrapper, this.getAccumulatedHeight(this.currentSlide) * -1);
+  }
 
-    <div class="grid-block">
-      <div class="tile">
-        <a class="tile-link" href="https://www.coursera.org/account/accomplishments/certificate/D9K6L8UNG2MZ">
-          <img class="tile-img tile-img10" src="cert10.JPG" alt="Image">
-        </a>
-      </div>
-    </div>
+  moveY(el, movement) {
+    el.style.transform = `translate3d(0, ${movement}px, 0`;
+  }
 
-  </div>
-</body>
+  getAccumulatedHeight(currentSlide) {
+    // Based on slide height + margin
+    return (currentSlide - 1) * 250;
+  }
 
+  markActive() {
+    const active = this.getElementsByClassName("active")[0];
+    if (active) {
+      active.classList.remove("active");
+    }
+    const currentSlide = this.children[this.currentSlide - 1];
+    currentSlide.classList.add("active");
+  }
+
+  nextSlide() {
+    if (this.currentSlide < this.numberOfSlides) {
+      this.lastMove = new Date().getTime();
+      this.currentSlide += 1;
+      this.updateScroll();
+      this.markActive();
+      this.emitSlideChange("next");
+    }
+  }
+
+  prevSlide() {
+    if (this.currentSlide > 1) {
+      this.lastMove = new Date().getTime();
+      this.currentSlide -= 1;
+      this.updateScroll();
+      this.markActive();
+      this.emitSlideChange("prev");
+    }
+  }
+
+  updateHistory(time, deltaY) {
+    const timeDiff = time - this.lastScroll;
+    this.lastScroll = time;
+
+    if (timeDiff > 200) {
+      this.scrollings = [];
+    } else {
+      if (this.scrollings.length >= 70) {
+        this.scrollings.shift();
+      }
+
+      this.scrollings.push(Math.abs(deltaY));
+    }
+  }
+
+  isAccelerating() {
+    const averageEnd = this.getAverage(this.scrollings, 10);
+    const averageMiddle = this.getAverage(this.scrollings, 70);
+    return averageEnd >= averageMiddle;
+  }
+
+  getAverage(elements, quantity) {
+    const q = Math.min(elements.length, quantity);
+    const sum = elements
+      .slice(elements.length - q)
+      .reduce((acc, i) => acc + i, 0);
+    return sum / q;
+  }
+
+  render() {
+    this.numberOfSlides = this.children.length;
+    Array.from(this.children).forEach((slide, index) => {
+      slide.classList.add("ch-mini-slider-slide");
+      if (index === 0) {
+        slide.classList.add("active");
+      }
+    });
+    const slot = document.createElement("slot");
+    const wrapper = document.createElement("div");
+    wrapper.classList.add("ch-mini-slider-wrapper");
+    wrapper.append(slot);
+    this.wrapper = wrapper;
+    const slider = document.createElement("div");
+    slider.classList.add("ch-mini-slider");
+    slider.append(wrapper);
+    this.root = slider;
+    this.shadow.appendChild(this.root);
+    this.shadow.appendChild(this.getStyle());
+    this.processQueue();
+  }
+
+  getStyle() {
+    const globalStyle = document.createElement("style");
+    globalStyle.textContent = `
+      .ch-mini-slider-slide {
+        height: 100%;
+        height: 200px;
+        margin-bottom: 50px;
+        width: 300px;
+        transform: scale(1);
+        transition: all 1000ms ease;
+        box-shadow: 50px 40px 20px -10px rgb(0 0 0 / 30%);
+      }
+      .ch-mini-slider-slide.active {
+        transform: scale(1.2);
+        box-shadow: 75px 60px 20px -20px rgb(0 0 0 / 30%);
+      }
+    `;
+    document.head.appendChild(globalStyle);
+    const style = document.createElement("style");
+    style.textContent = `
+      .ch-mini-slider {
+        height: 100vh;
+        position: relative;
+        transform: perspective(300px) rotate3d(1, -3, 0,  10deg);
+        display: inline-block;
+      }
+
+      .ch-mini-slider-wrapper {
+        transition: transform 1000ms ease;
+        display: inline-flex;
+        flex-direction: column;
+      }
+    `;
+    return style;
+  }
+}
+
+try {
+  customElements.define("ch-mini-slider", ChMiniSlider);
+} catch (err) {
+  const h3 = document.createElement("h3");
+  h3.innerHTML =
+    "This site uses webcomponents which only work in modern browsers.";
+  document.body.appendChild(h3);
+}
+
+const miniSlider = document.getElementsByTagName("ch-mini-slider")[0];
+
+miniSlider.addEventListener("onslidechange", (ev) => {
+  const backgroundColors = [
+    "#93420a",
+    "#2b5c34",
+    "#769fb1",
+    "#c2bcae",
+    "#9e8872",
+    "#000000",
+    "#ae816f",
+    "#712320"
+  ];
+  wipeClass("active", "message-slide");
+  wipeClass("to-next", "message-slide");
+  wipeClass("to-prev", "message-slide");
+  const message = document.getElementsByClassName(
+    "message-slide-" + ev.detail.slide
+  )[0];
+  message.classList.add("active");
+  message.classList.add("to-" + ev.detail.direction);
+  const content = document.getElementsByClassName("content")[0];
+  content.style.backgroundColor = backgroundColors[ev.detail.slide - 1];
+});
+
+function wipeClass(classToWipe, helpingClasses) {
+  const el = document.getElementsByClassName(
+    `${helpingClasses} ${classToWipe}`
+  )[0];
+  if (el) {
+    el.classList.remove(classToWipe);
+  }
+}
+
+      </script>
+    </body>
 </html>
