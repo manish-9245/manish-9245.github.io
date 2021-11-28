@@ -2,12 +2,15 @@
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 70%;
-  max-height: 40%;
+  width: 60%;
+  height: 60%;
   padding-bottom: 0%;
   position:relative;
   margin: auto;
+  object-fit: cover;
   align-self: center;
+  vertical-align: 55;
+
 }
 
 /* Hide the images by default */
