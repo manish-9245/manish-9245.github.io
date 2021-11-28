@@ -7,62 +7,65 @@
     <title>Certificates</title>
     <link rel="stylesheet" href="carousel.css" crossorigin="anonymous">
 </head>
-<body style="vertical-align:middle;align-content: center;">
+<body style="align-content: center;display: flex;
+justify-content: center;height: 100%;display:block ;margin-left: auto;  
+margin-right: auto; margin-top: auto;margin-bottom: auto;align-items: center;position: relative;top: 50%;background: rgb(235,0,255);
+background: linear-gradient(90deg, rgba(235,0,255,1) 0%, rgba(255,0,254,1) 100%);">
     <!-- Slideshow container -->
-<div class="slideshow-container">
+<div class="slideshow-container" style="display: block;margin-top: auto;margin-bottom: auto;color: aliceblue;margin-top: 2.15%;">
 
     <!-- Full-width images with number and caption text -->
     <div class="mySlides fade">
-      <div class="numbertext">1 / 10</div>
-      <img src="cert1.jpg" style="width:100%;height:100%">
-      <div class="text">Problem Solving(Basic)</div>
+      <div class="numbertext" style="color: black;">1 / 10</div>
+      <img src="cert1.jpg" style="width:100%;height:100%;opacity:100%;font-size: small;">
+      <div class="text" style="color: black;font-size:medium;">Problem Solving(Basic)</div>
     </div>
   
     <div class="mySlides fade">
-      <div class="numbertext">2 / 10</div>
-      <img src="cert2.jpg" style="width:100%;height:100%">
-      <div class="text">Problem Solving(Intermediate)</div>
+      <div class="numbertext" style="color: black;">2 / 10</div>
+      <img src="cert2.jpg" style="width:100%;height:100%;opacity:100%;font-size: small;">
+      <div class="text" style="color: black;font-size:medium;">Problem Solving(Intermediate)</div>
     </div>
   
     <div class="mySlides fade">
-      <div class="numbertext">3 / 10</div>
-      <img src="cert3.jpg" style="width:100%;height:100%">
-      <div class="text">Python(Basic)</div>
+      <div class="numbertext" style="color: black;">3 / 10</div>
+      <img src="cert3.jpg" style="width:100%;height:100%;opacity:100%;font-size: small;">
+      <div class="text" style="color: black;font-size:medium;">Python(Basic)</div>
     </div>
     <div class="mySlides fade">
-      <div class="numbertext">4 / 10</div>
-      <img src="cert4.jpg" style="width:100%;height:100%">
-      <div class="text">Python(Basic)</div>
+      <div class="numbertext" style="color: black;">4 / 10</div>
+      <img src="cert4.jpg" style="width:100%;height:100%;opacity:100%;font-size: small;">
+      <div class="text" style="color: black;font-size:medium;">Python(Basic)</div>
     </div>
     <div class="mySlides fade">
-      <div class="numbertext">5 / 10</div>87777
-      <img src="cert5.jpg" style="width:100%;height:100%">
-      <div class="text">JPMC Virtual Experience</div>
+      <div class="numbertext" style="color: black;">5 / 10</div>
+      <img src="cert5.jpg" style="width:100%;height:100%;opacity:100%;font-size: small;">
+      <div class="text" style="color: black;font-size:medium;">JPMC Virtual Experience</div>
     </div>
     <div class="mySlides fade">
-      <div class="numbertext">6 / 10</div>
-      <img src="cert6.jpg" style="width:100%;height:100%">
-      <div class="text">CCNA: Introduction to Networks</div>
+      <div class="numbertext" style="color: black;">6 / 10</div>
+      <img src="cert6.jpg" style="width:100%;height:100%;opacity:100%;">
+      <div class="text" style="color: black;font-size:medium;">CCNA: Introduction to Networks</div>
     </div>
     <div class="mySlides fade">
-      <div class="numbertext">7 / 10</div>
-      <img src="cert7.jpg" style="width:100%;height:100%">
-      <div class="text">Introduction to Datascience in Python</div>
+      <div class="numbertext" style="color: black;">7 / 10</div>
+      <img src="cert7.jpg" style="width:100%;height:100%;opacity:100%;">
+      <div class="text" style="color: black;font-size:medium;">Introduction to Datascience in Python</div>
     </div>
     <div class="mySlides fade">
-      <div class="numbertext">8 / 10</div>
-      <img src="cert8.jpg" style="width:100%;height:100%">
-      <div class="text">Elements of AI</div>
+      <div class="numbertext" style="color: black;">8 / 10</div>
+      <img src="cert8.jpg" style="width:100%;height:100%;opacity:100%;">
+      <div class="text" style="color: black;font-size:medium;">Elements of AI</div>
     </div>
     <div class="mySlides fade">
-      <div class="numbertext">9 / 10</div>
-      <img src="cert9.jpg" style="width:100%;height:100%">
-      <div class="text">R101</div>
+      <div class="numbertext" style="color: black;">9 / 10</div>
+      <img src="cert9.jpg" style="width:100%;height:100%;opacity:100%;">
+      <div class="text" style="color: black;font-size:medium;">R101</div>
     </div>
     <div class="mySlides fade">
-      <div class="numbertext">10 / 10</div>
-      <img src="cert10.jpg" style="width:100%">
-      <div class="text">R Programming:University of Michigan</div>
+      <div class="numbertext" style="color: black;">10 / 10</div>
+      <img src="cert10.jpg" style="width:100%;opacity:100%;">
+      <div class="text" style="color: black;font-size:medium;">R Programming:University of Michigan</div>
     </div>
     <!-- Next and previous buttons -->
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -71,7 +74,7 @@
   <br>
   
   <!-- The dots/circles -->
-  <div style="text-align:center">
+  <div style="text-align:center;color: aliceblue;">
     <span class="dot" onclick="currentSlide(1)"></span>
     <span class="dot" onclick="currentSlide(2)"></span>
     <span class="dot" onclick="currentSlide(3)"></span>
@@ -106,7 +109,7 @@ function showSlides(n) {
   for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
   }
-  for (i = 0; i < dots.length; i++) {
+  for (i = 0; i < 10; i++) {
       dots[i].className = dots[i].className.replace(" active", "");
   }
   slides[slideIndex-1].style.display = "block";
@@ -119,13 +122,13 @@ showSlides();
 function showSlides() {
   var i;
   var slides = document.getElementsByClassName("mySlides");
-  for (i = 0; i < slides.length; i++) {
+  for (i = 0; i < 10; i++) {
     slides[i].style.display = "none";
   }
   slideIndex++;
   if (slideIndex > slides.length) {slideIndex = 1}
   slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 2000); // Change image every 2 seconds
+  setTimeout(showSlides, 5000); // Change image every 5 seconds
 }
   </script>
 </body>
