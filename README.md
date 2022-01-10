@@ -20,7 +20,7 @@ Clone the project
 
 ## Tech Stack
 
-**Java Script, SCSS, CSS, HTML, TailwindCSS, Popper.js and Bootstrap**
+**Java Script, SCSS, CSS, HTML, TailwindCSS, Popper.js, JQuery and Bootstrap**
 
 
 
