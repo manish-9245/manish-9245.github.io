@@ -59,6 +59,8 @@ if (currentTheme) {
   }
 }
 
+//timeline
+
 //Adding date
 
 let myDate = document.querySelector("#datee");
