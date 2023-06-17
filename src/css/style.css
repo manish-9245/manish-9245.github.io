@@ -30,6 +30,7 @@
   --width-medium: 1100px;
   --width-large: 1300px;
   --card-colour: #000000;
+  --footer-border:rgb(0, 0, 0);
 }
 
 [data-theme="dark"] {
@@ -43,6 +44,7 @@
   --bg-secondary-two: #f4f4f4;
   --shadow: 0 2px 10px rgba(95, 95, 95, 0.2);
   --card-colour: #ffffff;
+  --footer-border:#ffd35c;
 }
 
 html {
@@ -83,6 +85,74 @@ a {
       grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
+.soc {
+  margin: 1rem;
+  height: 2rem;
+  width: 2rem; 
+}
+.soc > img{
+  text-align: center;
+ width: 100%;
+}
+
+.socs :hover{
+  filter:drop-shadow(1px 1px 1px rgb(155, 240, 255));
+  animation: sbounce 0.6s infinite alternate;
+}
+
+.socs {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  text-align: center;
+  align-items: center;
+  place-items: center;
+}
+
+
+.skill {
+  margin: 1rem;
+  height: 4rem;
+  width: 4rem; 
+}
+.skill > img{
+  text-align: center;
+ width: 100%;
+}
+
+
+
+.skills :hover{
+  filter:drop-shadow(2px 2px 2px var(--card-colour));
+  animation: sbounce 0.6s infinite alternate;
+}
+
+@keyframes sbounce {
+  from {
+    transform: translateY(0px);
+  }
+
+  to {
+    transform: translateY(-5px);
+  }
+}
+
+.skills {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  text-align: center;
+  align-items: center;
+  place-items: center;
+}
+
 .cards {
   box-shadow: 1px 1px 1px 1px var(--card-colour);
   transition: 0.3s;
@@ -112,7 +182,7 @@ body::-webkit-scrollbar-thumb {
 }
 /* On mouse-over, add a deeper shadow */
 .cards:hover {
-  box-shadow: 0 4px 16px 10px var(--card-colour);
+  box-shadow: 0 4px 10px 5px var(--card-colour);
 }
 
 /* Add some padding inside the card container */
@@ -287,6 +357,7 @@ body {
 /* Footer */
 #footer {
   background: #000000;
+  border-top: 2px solid var(--footer-border);
 }
 
 #footer .container {
@@ -296,6 +367,7 @@ body {
   justify-content: center;
   color: #ffffff;
   min-height: 160px;
+  
   text-align: center;
 }
 
