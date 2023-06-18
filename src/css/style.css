@@ -101,6 +101,7 @@ a {
   animation: sbounce 0.6s infinite alternate;
 }
 
+
 .socs {
   max-width: 1200px;
   margin: 0 auto;
@@ -220,6 +221,7 @@ body {
   right: 0;
   z-index: 20;
   background: var(--bg-primary);
+  
 }
 
 .navbar .container {
@@ -229,6 +231,7 @@ body {
   z-index: 20;
   height: 80px;
   width: 100%;
+  
 }
 
 .navbar .nav-menu {
@@ -309,6 +312,13 @@ body {
   max-width: var(--width-medium);
   margin: 0 auto;
   padding: 1rem 2rem;
+}
+#skilled{
+    display: flex;
+    flex-direction: column;
+    max-width: var(--width-medium);
+    margin: 0 auto;
+    padding: 1rem 2rem;
 }
 /* Projects */
 #projects {
