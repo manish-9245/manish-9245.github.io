@@ -414,7 +414,7 @@ body {
   justify-content: center;
   color: #ffffff;
   min-height: 160px;
-  
+  max-width: 100%;
   text-align: center;
 }
 
