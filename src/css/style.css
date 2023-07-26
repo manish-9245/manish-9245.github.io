@@ -103,7 +103,7 @@ a {
 
 
 .socs {
-  max-width: 1200px;
+  max-width: var(--width-medium);
   margin: 0 auto;
   display: grid;
   gap: 1rem;
@@ -414,36 +414,9 @@ body {
   justify-content: center;
   color: #ffffff;
   min-height: 160px;
-  max-width: 100%;
   text-align: center;
 }
 
-#footer a {
-  font-size: 0.8rem;
-  color: #fff;
-}
-
-#footer a:hover {
-  opacity: 0.6;
-}
-
-#footer .social {
-  margin: 0.9rem 0;
-  max-width: 100%;
-}
-
-#footer .social img {
-  width: 20px;
-  height: 20px;
-}
-
-#footer .social a {
-  margin: 0 0.5rem;
-}
-
-#footer p {
-  font-size: 0.8rem;
-}
 
 /* Responsiveness */
 
