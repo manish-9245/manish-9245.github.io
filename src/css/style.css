@@ -149,6 +149,7 @@ a {
   height: 4rem;
   width: 4rem; 
 }
+
 .skill > img{
   text-align: center;
  width: 100%;
@@ -170,7 +171,7 @@ a {
 }
 
 .skills {
-  max-width: var(--width-medium);
+  max-width: 100%;
   margin: 0 auto;
   display: grid;
   gap: 1rem;
