@@ -136,6 +136,13 @@ a {
       grid-template-columns: 1fr 1fr;
   }
 }
+@media (max-width:768px) {
+  .row {
+      display: grid;
+      grid-template-columns: 1fr;
+  }
+}
+
 #skilled {
   display: flex;
   flex-direction: column;
@@ -422,6 +429,7 @@ body {
 
 #footer .social {
   margin: 0.9rem 0;
+  max-width: 100%;
 }
 
 #footer .social img {
