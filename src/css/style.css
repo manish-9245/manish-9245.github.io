@@ -154,7 +154,9 @@ a {
   text-align: center;
  width: 100%;
 }
-
+* {
+  max-width: 100%;
+}
 .skills :hover{
   filter:drop-shadow(2px 2px 2px var(--card-colour));
   animation: sbounce 0.6s infinite alternate;
