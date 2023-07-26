@@ -103,7 +103,7 @@ a {
 
 
 .socs {
-  max-width: var(--width-medium);
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
   gap: 1rem;
@@ -117,6 +117,7 @@ a {
 .container {
   display: flex;
   justify-content: center;
+  text-align: center;
   max-width: 1000px; /* Adjust the maximum width of the container as needed */
   margin: 0 auto; /* Center the container horizontally on the page */
 }
