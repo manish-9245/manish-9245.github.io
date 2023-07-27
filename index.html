@@ -57,6 +57,7 @@
         >
         <link rel="stylesheet" href="/src/css/style.css">
         <link rel="stylesheet" href="/src/css/utilities.css">
+        <style id="dynamic-css"></style>
     </head>
     <body>
         <header id="hero">
@@ -215,9 +216,7 @@
                 </div>
                 <div class="skill">
                     <img src="https://raw.githubusercontent.com/rahulbanerjee26/githubProfileReadmeGenerator/main/icons/mysql.svg">
-                </div>                
-                
-               
+                </div>
                 <div class="skill" style="filter:drop-shadow(2px 2px 2px white);">
                     <img src="https://raw.githubusercontent.com/rahulbanerjee26/githubProfileReadmeGenerator/main/icons/php.svg">
                 </div>
@@ -230,7 +229,6 @@
                 <div class="skill">
                     <img src="https://raw.githubusercontent.com/rahulbanerjee26/githubProfileReadmeGenerator/main/icons/sass.svg">
                 </div>
-                
                 <div class="skill">
                     <img src="https://raw.githubusercontent.com/rahulbanerjee26/githubProfileReadmeGenerator/main/icons/typescript.svg">
                 </div>
@@ -240,7 +238,6 @@
                 <div class="skill">
                     <img src="https://raw.githubusercontent.com/rahulbanerjee26/githubProfileReadmeGenerator/main/icons/netlify.svg">
                 </div>
-                
             </div>
         </section>
         <!-- Projects -->
@@ -408,41 +405,95 @@
                 <p>Check out my Progress</p>
             </div>
             <div class="row">
-                <div class="column" >
-                    <a href="https://leetcode.com/coderbabuaa/"><img src="https://leetcard.jacoblin.cool/coderbabuaa?theme=dark&font=Crimson%20Pro&ext=heatmap&cache=0" width:"100%" /></a>
+                <div class="column">
+                    <div class="data-container">
+                        
+                        <h2>Leetcode</h2>
+                        
+                        <div class="leetrow">
+                            
+                            <div>
+                                <div class="circle">
+                                    <div class="outer-circle" id="outerCircle">
+                                        <canvas id="progressChart"></canvas>
+                                        <div class="inner-circle" id="innerCircle">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                            </div>
+                            <div>
+                                <h3>Difficulty</h3>
+                                <p><strong>All</strong></p>
+                                <p style="color:green;"><strong>Easy</strong></p>
+                                <p style="color:rgb(0, 47, 255);"><strong>Medium</strong></p>
+                                <p style="color:rgb(255, 0, 0);"><strong>Hard</strong></p>
+                            </div>
+                            <div>
+                                <h3>Solved</h3>
+                                <p>
+                                    <span id="totalSolved" style="font-family:verdana;">...</span>/<span id="totalQuestions" style="font-family:verdana;">...</span>
+                                </p>
+                                <p>
+                                    <span id="easySolved" style="font-family:verdana;">...</span>/<span id="totalEasy" style="font-family:verdana;">...</span>
+                                    
+                                </p>
+                                <p>
+                                    <span id="mediumSolved" style="font-family:verdana;">...</span>/<span id="totalMedium" style="font-family:verdana;">...</span>
+                                    
+                                </p>
+                                <p>
+                                    <span id="hardSolved" style="font-family:verdana;">...</span>/<span id="totalHard" style="font-family:verdana;">...</span>
+                                </p>
+                            </div>
+                            
+                        </div>
+                    </div>
                 </div>
-                <div class="column" >
-                    <img src="https://wakatime.com/badge/user/8862995c-21a1-4de3-9a95-e04b050ba05e.svg">
-                    <br><br>
-                    <img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=manish-9245&theme=react&border=61dafb&hide_border=true" alt="Manish Tiwari Github Stats" width:"100%" />
+                <div class="column">
+                    <div class="data-container">
+                    <h2>Github</h2>
+                    <img
+                        align="center"
+                        id="githubimage"
+                        alt="Manish Tiwari Github Stats"
+                        width:
+                        "100%"
+                    >
                 </div>
-              </div>
+                </div>
+            </div>
         </section>
         <footer id="footer">
             <div class="container">
                 <div class="socs">
                     <div class="soc">
                         <a href="https://www.instagram.com/manish.mp3/">
-                        <img src="https://raw.githubusercontent.com/rahulbanerjee26/githubProfileReadmeGenerator/main/icons/instagram.svg"></a>
+                            <img src="https://raw.githubusercontent.com/rahulbanerjee26/githubProfileReadmeGenerator/main/icons/instagram.svg">
+                        </a>
                     </div>
                     <div class="soc">
-                        
                         <a href="https://www.linkedin.com/in/manishtiwari13/">
-                        <img src="https://raw.githubusercontent.com/rahulbanerjee26/githubProfileReadmeGenerator/main/icons/linked-in-alt.svg">
-                    </a>
+                            <img src="https://raw.githubusercontent.com/rahulbanerjee26/githubProfileReadmeGenerator/main/icons/linked-in-alt.svg">
+                        </a>
                     </div>
                     <div class="soc">
                         <a href="https://github.com/manish-9245">
-                        <img src="https://raw.githubusercontent.com/rahulbanerjee26/githubProfileReadmeGenerator/main/icons/github.svg"></a>
+                            <img src="https://raw.githubusercontent.com/rahulbanerjee26/githubProfileReadmeGenerator/main/icons/github.svg">
+                        </a>
                     </div>
                 </div>
                 <h4>
                     Copyright &copy; Manish Tiwari
                     <span id="datee"></span>
-                    <br>All rights reserved
+                    <br>
+                    All rights reserved
                 </h4>
             </div>
         </footer>
         <script src="/src/js/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
     </body>
 </html>
