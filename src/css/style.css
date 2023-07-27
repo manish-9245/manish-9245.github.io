@@ -62,10 +62,13 @@ html {
 ul {
   list-style: none;
 }
-.header {
+.card .project-bio h3 {
+  text-align: left;
+}
+header {
   display: flex;
   align-items: center; /* Aligns items vertically in the center */
-  padding:1rem;
+  
 }
 
 .icon {
