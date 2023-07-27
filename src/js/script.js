@@ -141,31 +141,38 @@ document.addEventListener("DOMContentLoaded", function() {
               }
           });
           const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-          const githubImageElement = document.getElementById('githubimage');
-      
-          function switchTheme(e) {
-              if (e.target.checked) {
-                  document.documentElement.setAttribute("data-theme", "dark");
-                  localStorage.setItem("theme", "dark");
-                  githubImageElement.setAttribute("src", "https://github-readme-streak-stats.herokuapp.com?user=manish-9245&theme=light&hide_border=true&background=FFFFFF");
+    const githubImageElement = document.getElementById('githubimage');
 
-              } else {
-                  document.documentElement.setAttribute("data-theme", "light");
-                  localStorage.setItem("theme", "light");
-                  githubImageElement.setAttribute("src", "https://github-readme-streak-stats.herokuapp.com?user=manish-9245&theme=dark&hide_border=true&background=000000");
+    // Preload the images
+    const darkImage = new Image();
+    darkImage.src = "https://github-readme-streak-stats.herokuapp.com?user=manish-9245&theme=light&hide_border=true&background=FFFFFF";
+    
+    const lightImage = new Image();
+    lightImage.src = "https://github-readme-streak-stats.herokuapp.com?user=manish-9245&theme=dark&hide_border=true&background=000000";
 
-              }
-          }
-      
-          toggleSwitch.addEventListener("change", switchTheme, false);
-      
-          const currentTheme = localStorage.getItem("theme") || "light";
-          document.documentElement.setAttribute("data-theme", currentTheme);
-          toggleSwitch.checked = currentTheme === "dark";
-      
-          if (currentTheme === "dark") {
-              githubImageElement.setAttribute("src", "https://github-readme-streak-stats.herokuapp.com?user=manish-9245&theme=dark&hide_border=true&background=000000");
-          }
+    function switchTheme(e) {
+        if (e.target.checked) {
+            document.documentElement.setAttribute("data-theme", "dark");
+            localStorage.setItem("theme", "dark");
+            githubImageElement.setAttribute("src", darkImage.src);
+        } else {
+            document.documentElement.setAttribute("data-theme", "light");
+            localStorage.setItem("theme", "light");
+            githubImageElement.setAttribute("src", lightImage.src);
+        }
+    }
+
+    toggleSwitch.addEventListener("change", switchTheme, false);
+
+    const currentTheme = localStorage.getItem("theme") || "light";
+    document.documentElement.setAttribute("data-theme", currentTheme);
+    toggleSwitch.checked = currentTheme === "dark";
+
+    if (currentTheme === "dark") {
+        githubImageElement.setAttribute("src", darkImage.src);
+    } else {
+        githubImageElement.setAttribute("src", lightImage.src);
+    }
       })
       .catch(error => console.log('Error fetching data:', error));
 });

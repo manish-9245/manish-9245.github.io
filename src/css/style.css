@@ -121,7 +121,10 @@ a {
   max-width: 1000px; /* Adjust the maximum width of the container as needed */
   margin: 0 auto; /* Center the container horizontally on the page */
 }
-
+#totalQuestionss{
+    position: absolute;
+    font-size: xx-large;
+}
 .row {
   display:block;
   align-items: center;
