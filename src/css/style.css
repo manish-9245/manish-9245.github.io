@@ -183,7 +183,7 @@ a {
   place-content: center;
   margin-top: 2rem;
 }
-.githubimage{
+#githubimage{
   margin-top: 2rem;
 }
 @media (min-width:768px) {
