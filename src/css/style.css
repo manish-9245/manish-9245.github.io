@@ -68,12 +68,10 @@ ul {
 header {
   display: flex;
   align-items: center; /* Aligns items vertically in the center */
-  
 }
 
 .icon {
   width: 1.2rem; /* Adjust the width as per your icon size */
-  margin-right: 10px; /* Add spacing between the icon and heading text */
 }
 
 a {
