@@ -65,6 +65,7 @@ ul {
 .header {
   display: flex;
   align-items: center; /* Aligns items vertically in the center */
+  padding:1rem;
 }
 
 .icon {
@@ -184,7 +185,7 @@ a {
   margin-top: 2rem;
 }
 #githubimage{
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 @media (min-width:768px) {
   .leetrow {
@@ -301,7 +302,6 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
   z-index: 99999;
   border-radius: 25px;
-  margin:0px;
   padding:2px;
   height:16rem;
   background-color: var(--card-colour);
