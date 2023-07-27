@@ -183,6 +183,9 @@ a {
   place-content: center;
   margin-top: 2rem;
 }
+.githubimage{
+  margin-top: 2rem;
+}
 @media (min-width:768px) {
   .leetrow {
       display: grid;
