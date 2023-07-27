@@ -62,6 +62,15 @@ html {
 ul {
   list-style: none;
 }
+.header {
+  display: flex;
+  align-items: center; /* Aligns items vertically in the center */
+}
+
+.icon {
+  width: 20px; /* Adjust the width as per your icon size */
+  margin-right: 10px; /* Add spacing between the icon and heading text */
+}
 
 a {
   text-decoration: none;
@@ -170,6 +179,7 @@ a {
 .leetrow >*{
   padding:1rem;
   text-align: center;
+  align-items: center;
   place-content: center;
 }
 @media (min-width:768px) {
@@ -182,6 +192,29 @@ a {
   .leetrow {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+.leetrows {
+  display:block;
+  align-items: center;
+  color: var(--card-background);
+  background-color: var(--card-colour);
+}
+.leetrows >*{
+  padding:1rem;
+  text-align: center;
+  place-content: center;
+}
+@media (min-width:768px) {
+  .leetrows {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width:768px) {
+  .leetrows {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -549,7 +582,9 @@ body {
     transform: translateY(-8px) rotate(-45deg);
   }
 }
-
+.column{
+  align-items:center;
+}
 @media (max-width: 600px) {
   .project {
     display: grid;

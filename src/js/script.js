@@ -77,8 +77,8 @@ document.addEventListener("DOMContentLoaded", function() {
           const totalSolvedElement = document.getElementById('totalSolved');
           totalSolvedElement.textContent = data.totalSolved;
 
-          const totalQuestionsElement = document.getElementById('totalQuestions');
-          totalQuestionsElement.textContent = data.totalQuestions;
+          // const totalQuestionsElement = document.getElementById('totalQuestions');
+          // totalQuestionsElement.textContent = data.totalQuestions;
 
           const easySolvedElement = document.getElementById('easySolved');
           easySolvedElement.textContent = data.easySolved;
